@@ -135,7 +135,7 @@
         "mongodb": "3081630146a399d8",
         "name": "",
         "collection": "fake_temps",
-        "payonly": false,
+        "payonly": true,
         "upsert": false,
         "multi": false,
         "operation": "store",
