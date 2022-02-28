@@ -1,1 +1,120 @@
-[]
+[
+    {
+        "id": "c5be2d9139085de9",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "70e9b472a1767350",
+        "type": "mqtt-broker",
+        "name": "Localhost",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b4b26cc5ddf470dd",
+        "type": "inject",
+        "z": "c5be2d9139085de9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"sensor\":\"fake_one\", \"temp\":65}",
+        "payloadType": "json",
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "06650f242421a076"
+            ]
+        ]
+    },
+    {
+        "id": "06650f242421a076",
+        "type": "mqtt out",
+        "z": "c5be2d9139085de9",
+        "name": "",
+        "topic": "fake_topic",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "70e9b472a1767350",
+        "x": 350,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "252232d523bc50de",
+        "type": "mqtt in",
+        "z": "c5be2d9139085de9",
+        "name": "",
+        "topic": "fake_topic",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "70e9b472a1767350",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 160,
+        "wires": [
+            [
+                "d7dddfa9e17adf2e"
+            ]
+        ]
+    },
+    {
+        "id": "d7dddfa9e17adf2e",
+        "type": "debug",
+        "z": "c5be2d9139085de9",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 330,
+        "y": 160,
+        "wires": []
+    }
+]
