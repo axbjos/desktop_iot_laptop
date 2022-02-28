@@ -142,5 +142,49 @@
         "x": 390,
         "y": 260,
         "wires": []
+    },
+    {
+        "id": "2e7b86165f99dda2",
+        "type": "http in",
+        "z": "c5be2d9139085de9",
+        "name": "",
+        "url": "/temps",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 400,
+        "wires": [
+            [
+                "186f2ef1ad18fafe"
+            ]
+        ]
+    },
+    {
+        "id": "186f2ef1ad18fafe",
+        "type": "mongodb in",
+        "z": "c5be2d9139085de9",
+        "mongodb": "3081630146a399d8",
+        "name": "",
+        "collection": "fake_temps",
+        "operation": "find",
+        "x": 450,
+        "y": 400,
+        "wires": [
+            [
+                "fea2e16c769ebfe1"
+            ]
+        ]
+    },
+    {
+        "id": "fea2e16c769ebfe1",
+        "type": "http response",
+        "z": "c5be2d9139085de9",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 710,
+        "y": 400,
+        "wires": []
     }
 ]
