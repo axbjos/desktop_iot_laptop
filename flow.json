@@ -34,6 +34,16 @@
         "sessionExpiry": ""
     },
     {
+        "id": "3081630146a399d8",
+        "type": "mongodb",
+        "hostname": "127.0.0.1",
+        "topology": "direct",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "fake_db",
+        "name": ""
+    },
+    {
         "id": "b4b26cc5ddf470dd",
         "type": "inject",
         "z": "c5be2d9139085de9",
@@ -97,7 +107,8 @@
         "y": 160,
         "wires": [
             [
-                "d7dddfa9e17adf2e"
+                "d7dddfa9e17adf2e",
+                "b9e3ce0e6ec32687"
             ]
         ]
     },
@@ -115,6 +126,21 @@
         "statusType": "auto",
         "x": 330,
         "y": 160,
+        "wires": []
+    },
+    {
+        "id": "b9e3ce0e6ec32687",
+        "type": "mongodb out",
+        "z": "c5be2d9139085de9",
+        "mongodb": "3081630146a399d8",
+        "name": "",
+        "collection": "fake_temps",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 390,
+        "y": 260,
         "wires": []
     }
 ]
